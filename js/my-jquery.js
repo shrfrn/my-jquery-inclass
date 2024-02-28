@@ -5,25 +5,20 @@ window.onload = onInit
 function onInit() {
     console.log('Hi')
 
-    const $elBtn = getEl('button')
-    $elBtn.on('click', onBtnClick)
+    $('button').on('click', onBtnClick)
 }
 
 function onBtnClick() {
-    const $elHeading = getEl('h1')
-    const $elSubHeading = getEl('h2')
-    const $elYear = getEl('footer span')
+    $('h1').addClass('highlight')
+    setTimeout(() => $('h1').removeClass('highlight'), 2000)
 
-    $elHeading.addClass('highlight')
-    setTimeout(() => $elHeading.removeClass('highlight'), 2000)
+    $('footer span').addClass('highlight')
+    setTimeout(() => $('footer span').removeClass('highlight'), 2000)
 
-    $elYear.addClass('highlight')
-    setTimeout(() => $elYear.removeClass('highlight'), 2000)
-
-    $elSubHeading.text('Welcome to My - JQuery!')
+    $('h2').text('Welcome to My - JQuery!')
 }
 
-function getEl(selector) {
+function $(selector) {
     const el = document.querySelector(selector)
     return {
         addClass: cls => el.classList.add(cls),
