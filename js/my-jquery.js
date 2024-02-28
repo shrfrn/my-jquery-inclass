@@ -1,7 +1,12 @@
 'use strict'
 
+window.onload = onInit
+
 function onInit() {
     console.log('Hi')
+
+    const elBtn = document.querySelector('button')
+    elBtn.addEventListener('click', onBtnClick)
 }
 
 function onBtnClick() {
