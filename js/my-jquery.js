@@ -10,9 +10,9 @@ function onInit() {
 }
 
 function onBtnClick() {
-    const elHeading = document.querySelector('h1')
-    const elSubHeading = document.querySelector('h2')
-    const elYear = document.querySelector('footer span')
+    const elHeading = getEl('h1')
+    const elSubHeading = getEl('h2')
+    const elYear = getEl('footer span')
 
     elHeading.classList.add('highlight')
     setTimeout(() => elHeading.classList.remove('highlight'), 2000)
@@ -21,4 +21,9 @@ function onBtnClick() {
     setTimeout(() => elYear.classList.remove('highlight'), 2000)
 
     elSubHeading.innerText = 'Welcome to My - JQuery!'
+}
+
+function getEl(selector) {
+    const el = document.querySelector(selector)
+    return el
 }
